@@ -19,8 +19,7 @@ function renderArticles(page = 1) {
       articles.forEach((article) => {
         const pubDate = dayjs(article.publish_date).fromNow();
 
-        const liked = ARTICLES_LIKED.includes(article.id) ? 'liked' : '';
-
+        
       
         let title = article.title;
         let description = article.description;
@@ -32,7 +31,7 @@ function renderArticles(page = 1) {
         }
 
         searchTitle.innerHTML = `Có ${totalArticles} bài viết cho từ khóa "${keyword}"`;
-
+        const liked = ARTICLES_LIKED.includes(article.id) ? 'liked' : '';
         contentHTML += `
         <div class="col-lg-4 col-md-6 item mb-4">
           <div class="card h-100">
@@ -59,9 +58,9 @@ function renderArticles(page = 1) {
                     </span>
                   </li>
                 </ul>
-                <i class="fa fa-heart icon-like ${liked}" aria-hidden="true" data-id=${article.id} data-title="${article.title}"></i>
               </div>
             </div>
+            <i class="fa fa-heart icon-like ${liked}" aria-hidden="true" data-id=${article.id} data-title="${article.title}"></i>
           </div>
         </div>`;
       });

@@ -1714,3 +1714,9 @@ a.current {
 .icon-like.liked{
     color:red;
 }
+
+/* Category */
+#category .post-media {
+    width: 348px;
+    height: 200px;
+}
